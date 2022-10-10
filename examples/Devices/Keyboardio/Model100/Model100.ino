@@ -686,6 +686,9 @@ void setup() {
   // don't have a lot of power to share with USB devices
   DefaultLEDModeConfig.activateLEDModeIfUnconfigured(&LEDOff);
 
+  // Turn off tap-repeat for Qukeys to enforce consistent keycode when held.
+  Qukeys.setMaxIntervalForTapRepeat(0);
+
   // Make all Qukeys trigger instantly without considering prior keys.
   Qukeys.setMinimumPriorInterval(0);
 }
